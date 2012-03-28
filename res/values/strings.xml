@@ -5,4 +5,11 @@
     <string name="app_name">Yamba</string>
 	<string name="title_status">Twitter Update</string>
 	<string name="hintText">Enter status to update</string>
+	<string name="titleUsername">student</string>
+	<string name="titleSummary">enter username</string>
+	<string name="password">password</string>
+	<string name="passwordSummary">Enter password</string>
+	<string name="apirootTitle">api used</string>
+	<string name="apiSummary">enter the address of the api</string>
+	<string name="titleString">edit info</string>
 </resources>
