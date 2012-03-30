@@ -24,9 +24,8 @@ import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 
 
-public class YambaActivity extends Activity implements OnClickListener,TextWatcher,OnSharedPreferenceChangeListener{
+public class YambaActivity extends Activity implements OnClickListener,TextWatcher{
 	EditText et;Button b;Twitter twitter;TextView tv;
-	//private SharedPreferences prefs;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +39,6 @@ public class YambaActivity extends Activity implements OnClickListener,TextWatch
         tv=(TextView) findViewById(R.id.textView2);
         tv.setText(Integer.toString(140));
         tv.setTextColor(Color.GREEN);
-       // prefs=PreferenceManager.getDefaultSharedPreferences(this);
-       // prefs.registerOnSharedPreferenceChangeListener(this);
     }
     class PostToTwitter extends AsyncTask<String, Integer, String>{
     	@Override
@@ -117,24 +114,5 @@ public class YambaActivity extends Activity implements OnClickListener,TextWatch
 			break;
 		}
 		return true;
-	}
-	/*private Twitter getTwitter() {
-		String username,password,apiroot;
-		if(twitter==null){
-			//username="student";password="password";apiroot="http://yamba.marakana.com/api";
-	        username=prefs.getString("username", "");
-	        password=prefs.getString("password", "");
-	        apiroot=prefs.getString("apiroot", "http://yamba.marakana.com/api");
-	        twitter=new Twitter(username,password);
-	        twitter.setAPIRootUrl(apiroot);
-		}
-		return twitter;
-	}*/
-
-	@Override
-	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-			String key) {
-		// TODO Auto-generated method stub
-		
 	}
 }
