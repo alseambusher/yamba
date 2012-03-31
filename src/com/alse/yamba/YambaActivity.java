@@ -109,9 +109,16 @@ public class YambaActivity extends Activity implements OnClickListener,TextWatch
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()){
-			case R.id.item1:
-			startActivity(new Intent(this,PrefsActivity.class));
-			break;
+				case R.id.itemServiceStart:
+				startService(new Intent(this, UpdateService.class)); //
+				break;
+				case R.id.itemServiceStop:
+				stopService(new Intent(this, UpdateService.class)); //
+				break;
+				case R.id.itemPrefs:
+				startActivity(new Intent(this, PrefsActivity.class));
+				break;
+				default:break;
 		}
 		return true;
 	}

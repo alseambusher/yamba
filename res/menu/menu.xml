@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:id="@+id/item1" android:title="@string/titleString" android:icon="@android:drawable/ic_lock_lock"></item>
-</menu>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/itemPrefs" android:title="Preference"
+android:icon="@android:drawable/ic_menu_preferences"></item>
+<item android:title="Service start" android:id="@+id/itemServiceStart"
+android:icon="@android:drawable/ic_media_play"></item>
+<item android:title="Service Stop" android:id="@+id/itemServiceStop"
+android:icon="@android:drawable/ic_media_pause"></item>
+</menu> 

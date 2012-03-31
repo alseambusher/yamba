@@ -17,7 +17,9 @@ public final class R {
     public static final class id {
         public static final int buttonUpdate=0x7f070003;
         public static final int editText=0x7f070002;
-        public static final int item1=0x7f070004;
+        public static final int itemPrefs=0x7f070004;
+        public static final int itemServiceStart=0x7f070005;
+        public static final int itemServiceStop=0x7f070006;
         public static final int textView1=0x7f070000;
         public static final int textView2=0x7f070001;
     }
