@@ -34,8 +34,6 @@ public class YambaActivity extends Activity implements OnClickListener,TextWatch
         et.addTextChangedListener(this);
         b=(Button) findViewById(R.id.buttonUpdate);
         b.setOnClickListener(this);
-      //  twitter=new Twitter("student", "password");
-        //twitter.setAPIRootUrl("http://yamba.marakana.com/api");
         tv=(TextView) findViewById(R.id.textView2);
         tv.setText(Integer.toString(140));
         tv.setTextColor(Color.GREEN);

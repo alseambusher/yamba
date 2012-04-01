@@ -9,9 +9,15 @@ import android.text.TextUtils;
 import android.util.Log;
 
 public class YambaApplication extends Application implements OnSharedPreferenceChangeListener{
-
+	private boolean serviceRunning;
 	private static final String TAG = YambaApplication.class.getSimpleName();
 	public Twitter twitter;private SharedPreferences prefs;
+	public boolean isServiceRunning(){
+		return serviceRunning;
+	}
+	public void setServiceRunning(boolean serviceRunning){
+		this.serviceRunning=serviceRunning;
+	}
 	@Override
 	public void onCreate() {
 		super.onCreate();
