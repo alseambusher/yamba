@@ -9,12 +9,13 @@ import winterwell.jtwitter.TwitterList;
 import android.app.Service;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.IBinder;
 import android.util.Log;
 
 public class UpdateService extends Service {
-	static final int DELAY = 60000;
+	static final int DELAY = 30000;
 	private boolean runFlag = false;
 	private Updater updater;
 	private YambaApplication yamba;
@@ -60,8 +61,8 @@ public class UpdateService extends Service {
 				Log.d("updater","updater running");
 				try{
 					try{
-						//timeline=yamba.getTwitter().getFriendsTimeline();
-						timeline=yamba.getTwitter().getPublicTimeline();
+						timeline=yamba.getTwitter().getFriendsTimeline();
+						//timeline=yamba.getTwitter().getPublicTimeline();
 					}
 					catch(TwitterException e){
 						Log.e("service","failed to get from timeline",e);
@@ -75,7 +76,12 @@ public class UpdateService extends Service {
 						values.put(DbHelper.C_SOURCE, status.source);
 						values.put(DbHelper.C_TEXT, status.text);
 						values.put(DbHelper.C_USER, status.user.name);
+						try{
 						db.insertOrThrow(DbHelper.TABLE, null, values);
+						}
+						catch (SQLException e) {
+							Log.e("updater","cant insert to db");
+						}
 						Log.d("status update",String.format("%s,%s",status.user.name,status.text));
 					}
 					db.close();
